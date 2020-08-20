@@ -10,18 +10,19 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>{props.pressure} Pa</Text>
             <Text style={styles.innerText}>{props.humidity} %</Text>
             <Text style={styles.innerText}>{props.visibility} Km</Text>
+            <Text style={styles.innerText}>{props.speed} m</Text>
         </View>
     );
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     innerText: {
         color: 'white'
     },
-});*/
-const styles = StyleSheet.create({
+});
+/*const styles = StyleSheet.create({
     container: { flexDirection: 'column', alignItems: 'center', justifyContent: 'center', },
     
-});
+});*/
 
 

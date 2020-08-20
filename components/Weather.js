@@ -9,8 +9,8 @@ export default function Weather(props) {
         temp: 0,
         pressure: 0,
         humidity: 0,
-        visibility: 0
-        //wind: 0 
+        visibility: 0,
+        speed: 0 
         //clouds: 0
     })
 
@@ -26,7 +26,8 @@ export default function Weather(props) {
                     temp: json.main.temp,
                     pressure: json.main.pressure,
                     humidity: json.main.humidity,
-                    visibility: json.visibility
+                    visibility: json.visibility,
+                    speed: json.wind.speed
                 });
             })
             .catch((error) => { 
@@ -44,7 +45,7 @@ export default function Weather(props) {
     );
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
         justifyContent:'space-evenly',
@@ -56,8 +57,8 @@ export default function Weather(props) {
         color: 'white',
         alignItems:'center',
     },
-});*/
-const styles = StyleSheet.create({
+});
+/*const styles = StyleSheet.create({
     container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
     backdrop: {
         width: '100%', height: '50%', opacity: 0.3, backgroundColor: '#000',
@@ -65,4 +66,4 @@ const styles = StyleSheet.create({
     },
     setLayout: { width: '100%', height: '100%' }
 
-});
+});*/

@@ -34,7 +34,7 @@ export default function ZipCodeScreen(){
     )
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     ZipItem: {
         flex: 1,
         flexDirection: 'row',
@@ -46,8 +46,8 @@ export default function ZipCodeScreen(){
     zipCode:{
         flex: 1
     }
-})*/
-const styles = StyleSheet.create({
+})
+/*const styles = StyleSheet.create({
     zipItem: { alignItems: 'center', paddingTop: 10, },
     BackgroundText: {
         flexDirection: 'row',
@@ -61,5 +61,5 @@ const styles = StyleSheet.create({
         height: '10%'
     },
     container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
-});
+});*/
 
