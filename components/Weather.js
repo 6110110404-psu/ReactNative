@@ -10,8 +10,8 @@ export default function Weather(props) {
         pressure: 0,
         humidity: 0,
         visibility: 0,
-        speed: 0 
-        //clouds: 0
+        speed: 0, 
+        timezone: 0
     })
 
     useEffect(() => {
@@ -27,7 +27,8 @@ export default function Weather(props) {
                     pressure: json.main.pressure,
                     humidity: json.main.humidity,
                     visibility: json.visibility,
-                    speed: json.wind.speed
+                    speed: json.wind.speed,
+                    timezone: json.timezone
                 });
             })
             .catch((error) => { 

@@ -11,6 +11,7 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>{props.humidity} %</Text>
             <Text style={styles.innerText}>{props.visibility} Km</Text>
             <Text style={styles.innerText}>{props.speed} m</Text>
+            <Text style={styles.innerText}>{props.timezone} sec</Text>
         </View>
     );
 }
