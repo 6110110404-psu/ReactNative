@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Text, ImageBackground, StyleSheet} from 'react-native'
+import {Text, ImageBackground, StyleSheet, View} from 'react-native'
 import Forecast from './Forecast'
 
 export default function Weather(props) {
@@ -40,11 +40,13 @@ export default function Weather(props) {
     }, [props.zipCode])
 
     return (
-        <ImageBackground source={require('../nsky.jpg')} style={styles.backdrop}>
+        <View style = {styles.container}>
+        <ImageBackground source={require('../Sky.jpg')} style={styles.backdrop}>
             <Text style={styles.innerText}>Zip Code is </Text>
             <Text style={styles.innerText}>{props.zipCode}</Text>
             <Forecast {...forecastInfo} />
         </ImageBackground>
+        </View>
     );
 }
 
@@ -61,12 +63,19 @@ export default function Weather(props) {
         alignItems:'center',
     },
 });*/
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
     backdrop: {
         width: '100%', height: '50%', opacity: 0.3, backgroundColor: '#000',
         flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
     },
     setLayout: { width: '100%', height: '100%' }
+
+})*/
+const styles = StyleSheet.create({
+    container: { paddingTop: 25},
+    backdrop: { width: '100%', height: '100%'},
+    content: {backgroundColor: 'black', opacity: 0.6, alignItems: 'center'},
+    zipCode: {color: 'white', fontSize: 20}
 
 });
