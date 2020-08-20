@@ -1,7 +1,4 @@
-//import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-//import { StyleSheet, View } from 'react-native';
-//import Weather from './components/Weather';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ZipCodeScreen from './screen/ZipCodeScreen';
@@ -19,5 +16,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
- 

@@ -6,7 +6,12 @@ export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        pressure: 0,
+        humidity: 0,
+        visibility: 0
+        //wind: 0 
+        //clouds: 0
     })
 
     useEffect(() => {
@@ -18,7 +23,10 @@ export default function Weather(props) {
                 setForecastInfo({ 
                     main: json.weather[0].main, 
                     description: json.weather[0].description, 
-                    temp: json.main.temp
+                    temp: json.main.temp,
+                    pressure: json.main.pressure,
+                    humidity: json.main.humidity,
+                    visibility: json.visibility
                 });
             })
             .catch((error) => { 
@@ -28,7 +36,7 @@ export default function Weather(props) {
     }, [props.zipCode])
 
     return (
-        <ImageBackground source={require('../Sky.jpg')} style={styles.backdrop}>
+        <ImageBackground source={require('../nsky.jpg')} style={styles.backdrop}>
             <Text style={styles.innerText}>Zip Code is </Text>
             <Text style={styles.innerText}>{props.zipCode}</Text>
             <Forecast {...forecastInfo} />
@@ -36,7 +44,7 @@ export default function Weather(props) {
     );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
         justifyContent:'space-evenly',
@@ -45,7 +53,16 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     innerText: {
-        color: 'red',
+        color: 'white',
+        alignItems:'center',
     },
+});*/
+const styles = StyleSheet.create({
+    container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
+    backdrop: {
+        width: '100%', height: '50%', opacity: 0.3, backgroundColor: '#000',
+        flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+    },
+    setLayout: { width: '100%', height: '100%' }
+
 });
-   

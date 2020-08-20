@@ -7,12 +7,21 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>{props.main}</Text>
             <Text style={styles.innerText}>{props.description}</Text>
             <Text style={styles.innerText}>{props.temp} °C</Text>
+            <Text style={styles.innerText}>{props.pressure} Pa</Text>
+            <Text style={styles.innerText}>{props.humidity} %</Text>
+            <Text style={styles.innerText}>{props.visibility} Km</Text>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     innerText: {
-        color: 'red'
-    }
+        color: 'white'
+    },
+});*/
+const styles = StyleSheet.create({
+    container: { flexDirection: 'column', alignItems: 'center', justifyContent: 'center', },
+    
 });
+
+
