@@ -12,18 +12,19 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>{props.visibility} Km</Text>
             <Text style={styles.innerText}>{props.speed} m</Text>
             <Text style={styles.innerText}>{props.timezone} sec</Text>
+            <Text style={styles.innerText}>{props.country}</Text>
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     innerText: {
         color: 'white'
     },
-});
-/*const styles = StyleSheet.create({
+});*/
+const styles = StyleSheet.create({
     container: { flexDirection: 'column', alignItems: 'center', justifyContent: 'center', },
     
-});*/
+});
 
 

@@ -11,7 +11,8 @@ export default function Weather(props) {
         humidity: 0,
         visibility: 0,
         speed: 0, 
-        timezone: 0
+        timezone: 0,
+        country: 0
     })
 
     useEffect(() => {
@@ -28,7 +29,8 @@ export default function Weather(props) {
                     humidity: json.main.humidity,
                     visibility: json.visibility,
                     speed: json.wind.speed,
-                    timezone: json.timezone
+                    timezone: json.timezone,
+                    country: json.sys.country
                 });
             })
             .catch((error) => { 
@@ -46,7 +48,7 @@ export default function Weather(props) {
     );
 }
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
         justifyContent:'space-evenly',
@@ -58,8 +60,8 @@ const styles = StyleSheet.create({
         color: 'white',
         alignItems:'center',
     },
-});
-/*const styles = StyleSheet.create({
+});*/
+const styles = StyleSheet.create({
     container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
     backdrop: {
         width: '100%', height: '50%', opacity: 0.3, backgroundColor: '#000',
@@ -67,4 +69,4 @@ const styles = StyleSheet.create({
     },
     setLayout: { width: '100%', height: '100%' }
 
-});*/
+});
