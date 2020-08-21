@@ -42,7 +42,7 @@ export default function Weather(props) {
                 <Forecast {...forecastInfo} />
             </View>
             <Button color="green" title="                                              BACK                                              " 
-            onPress={() => navigation.navigate('City Name/Zip Code')} />
+            onPress={() => navigation.navigate('City Name')} />
         </ImageBackground>
         
     );

@@ -10,7 +10,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="City Name/Zip Code" component={ZipCodeScreen}/>
+        <Stack.Screen name="City Name" component={ZipCodeScreen}/>
         <Stack.Screen name="Weather" component={WeatherScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
