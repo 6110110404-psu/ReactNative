@@ -1,18 +1,17 @@
 import React, {useState, useEffect} from 'react'
-import {Text, ImageBackground, StyleSheet, View} from 'react-native'
+import {Text, ImageBackground, StyleSheet, View, Button} from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import Forecast from './Forecast'
 
 export default function Weather(props) {
+    const navigation = useNavigation()
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
         temp: 0,
-        pressure: 0,
-        humidity: 0,
-        visibility: 0,
-        speed: 0, 
-        timezone: 0,
-        country: 0
+        temp_max: 0,
+        temp_min: 0,
+        name: '-'
     })
 
     useEffect(() => {
@@ -26,10 +25,7 @@ export default function Weather(props) {
                     description: json.weather[0].description, 
                     temp: json.main.temp,
                     pressure: json.main.pressure,
-                    humidity: json.main.humidity,
                     visibility: json.visibility,
-                    speed: json.wind.speed,
-                    timezone: json.timezone,
                     country: json.sys.country
                 });
             })
@@ -40,42 +36,43 @@ export default function Weather(props) {
     }, [props.zipCode])
 
     return (
-        <View style = {styles.container}>
         <ImageBackground source={require('../Sky.jpg')} style={styles.backdrop}>
-            <Text style={styles.innerText}>Zip Code is </Text>
-            <Text style={styles.innerText}>{props.zipCode}</Text>
-            <Forecast {...forecastInfo} />
+            <View style={styles.container}>
+                <Text style={styles.innerText}>Zip Code: {props.zipCode}</Text>
+                <Forecast {...forecastInfo} />
+            </View>
+            <Button color="green" title="                                              BACK                                              " 
+            onPress={() => navigation.navigate('City Name/Zip Code')} />
         </ImageBackground>
-        </View>
+        
     );
 }
 
-/*const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
-        justifyContent:'space-evenly',
+        justifyContent: 'space-between',
         alignItems:'center',
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     innerText: {
         color: 'white',
-        alignItems:'center',
+        textAlign: 'center',
+        fontSize: 23,
+        paddingBottom: 15,
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black',
+        fontFamily: 'sans-serif-condensed'
     },
-});*/
-/*const styles = StyleSheet.create({
-    container: { flex: 1, alignItems: 'center', width: '100%', height: '100%' },
-    backdrop: {
-        width: '100%', height: '50%', opacity: 0.3, backgroundColor: '#000',
-        flexDirection: 'column', alignItems: 'center', justifyContent: 'center'
+    container: { 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        width: '100%', 
+        height: '50%', 
+        opacity: 0.5, 
+        backgroundColor: '#012',
     },
-    setLayout: { width: '100%', height: '100%' }
-
-})*/
-const styles = StyleSheet.create({
-    container: { paddingTop: 25},
-    backdrop: { width: '100%', height: '100%'},
-    content: {backgroundColor: 'black', opacity: 0.6, alignItems: 'center'},
-    zipCode: {color: 'white', fontSize: 20}
-
 });
