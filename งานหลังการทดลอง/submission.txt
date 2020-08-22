@@ -6,3 +6,4 @@
 3. เพิ่มจำนวน Zip code 
 4.จัดรูปแบบให้เหมือนในแลปชีต
 5. ตกแต่งสีตัวอักษร ขนาดตัวอักษร
+6. คลิปตัวอย่างการทำงานของโปรแกรม = https://drive.google.com/file/d/1rNvK5iiPJx8CMWIBnrezz8vXmZMEfs96/view?usp=sharing
